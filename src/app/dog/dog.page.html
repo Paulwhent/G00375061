@@ -1,0 +1,38 @@
+<!--Page (in 'dog' component) to show data/images (via 'DogService' service)-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button              
+        [text] = "buttonText"
+        [icon] = "buttonIcon"> <!--Back button to previous page-->
+        </ion-back-button>
+    </ion-buttons>
+<div class="center">
+    <ion-title>Paws for thought!</ion-title>
+</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-header align="center" >Woof!</ion-card-header>
+<ion-card *ngFor = "let d of DogData">        <!--*ngFor directive using Angular template syntax creating d variable as an index to DogData array-->
+ 
+     <ion-card-content>
+      
+     <img src = "{{DogData[0]}}" class="center" style="width:300px;height:300px;"/>      <!--random dog images pulled from remote API-->
+
+<ion-card-subtitle>{{d.breeds}}</ion-card-subtitle>
+     
+</ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="center">
+    <ion-button shape="round" (click) = "DogService()">Next Dog</ion-button>                  <!--ClickEvent event binding for triggering new random image from API-->
+    <ion-button shape="round" color="success" [routerLink] = "['/input']">My Dog</ion-button> <!--Link via app.routing.module.ts to data input page to record 'my dog' profile-->
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

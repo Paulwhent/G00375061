@@ -1,0 +1,44 @@
+
+<ion-header>
+  
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        <ion-back-button
+        [text] = "buttonText"
+        [icon] = "buttonIcon">
+        </ion-back-button>
+    </ion-buttons>
+<div class="center">
+    <ion-title>My Dog Details</ion-title>
+  </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+<ion-card>
+<ion-card-content>
+  
+  <ion-item>
+    <ion-input type="text" placeholder="My Dog Name" [(ngModel)]="name"></ion-input><ion-button (click)="onSave()">Save</ion-button>      <!--button OnClick event to use onSave() method to save data to local storage-->
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="My Dog Breed" [(ngModel)]="breed"></ion-input><ion-button (click)="onSave()">Save</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="My Dog Age" [(ngModel)]="age"></ion-input><ion-button (click)="onSave()">Save</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="My Dog MicroChip No." [(ngModel)]="micro"></ion-input><ion-button (click)="onSave()">Save</ion-button>
+  </ion-item>
+    
+  </ion-card-content>
+</ion-card>
+</ion-content>
+<ion-footer>
+  <div class="center" style="background-color:grey">
+    <ion-button shape="round" (click) = "storage.clear()" (click)="location.reload()">Reset</ion-button>
+    <ion-button shape="round" color="success" [routerLink] = "['/details']">Profile</ion-button>
+  </div>
+</ion-footer>

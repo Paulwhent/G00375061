@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        [text] = "buttonText"
+        [icon] = "buttonIcon">
+      </ion-back-button>
+      </ion-buttons>
+      <div class="center">
+        <ion-title >{{dogname}} Profile</ion-title>       <!--Add dogname from local storage to page Title-->
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+  <ion-title >{{dogbreed}} Details</ion-title>
+  <ion-title >{{dogage}} Details</ion-title>
+  <ion-title >{{dogmicro}} Details</ion-title>
+  </div>
+</ion-content>

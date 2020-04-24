@@ -1,0 +1,25 @@
+
+<ion-header [translucent]="true">
+  
+  <ion-toolbar>
+
+    <ion-title style="background-color:grey">
+        <h1 style="font-family:'Gill Sans';font-weight:bold;color:rgb(228, 10, 10);">Walkies!</h1> 
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <img src= "assets/Images/Cody.JPG" alt="Cody" class="center" style="width:280px;height:400px;"/>    <!--home page image-->
+
+<ion-text color ="primary">
+  <ion-button shape="round" color="warning" (click) = "flashMethod()">Torch</ion-button>              <!--Button calling Flashlight method-->
+  <ion-button shape="round" color="success" [routerLink] = "['/walks']">Walks</ion-button>            <!--Button link via app.routing.module.ts to Walks page-->
+  <ion-button shape="round" color="danger" [routerLink] = "['/dog']">Dogs</ion-button>                <!--Button link via app.routing.module.ts to Dogs page-->
+</ion-text>
+
+</ion-content>
+
